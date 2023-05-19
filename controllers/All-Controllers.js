@@ -7,9 +7,12 @@ export const Anu=(req,res)=>{
 
 }
 export const Snhel=(req,res)=>{
+    
+        
     res.send("sending message From Snhel function");
+    } 
+    
 
-}
 export const Abhi=(req,res)=>{
     res.send("sending message From Abhi function");
 

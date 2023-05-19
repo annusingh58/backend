@@ -1,7 +1,17 @@
 import express from "express";
+import morgan from "morgan";
 import{kunal,Anu,Snhel,Poonam,Abhi} from './controllers/All-Controllers.js';
+import router from './routes/UserRoutes.js';
 
 const app = express();
+
+
+
+app.use(morgan('dev'));// use()  middleware
+
+ app.use('/api/v1',router);
+
+ app.use(express.json());   //data to parse
 // app.get('/hello' , function(req, res ){res.send("hello india")}) 
 
 // app.get('/anu',function(){console.log("inside awdix function..")}); 
@@ -26,5 +36,5 @@ app.get('/snhel' , Snhel)
 // app.delete();
 
 
-app.listen(8000) //port  use for run
+app.listen(8000,()=> console.log("working on port 8000")) //port  use for run
 
