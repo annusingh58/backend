@@ -6,12 +6,12 @@ import router from './routes/UserRoutes.js';
 const app = express();
 
 
+app.use(express.json());   //data to parse
 
 app.use(morgan('dev'));// use()  middleware
 
  app.use('/api/v1',router);
 
- app.use(express.json());   //data to parse
 // app.get('/hello' , function(req, res ){res.send("hello india")}) 
 
 // app.get('/anu',function(){console.log("inside awdix function..")}); 
