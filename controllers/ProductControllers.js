@@ -14,7 +14,7 @@ export const addProduct =(req,res)=>{
 
 
     // res.send({Name ,Price,Image})
-    // return res.send({Name, Price, Image})
+    return res.send({Name, Price, Image})
     return res.send(product)  // object structureing
 
     } 

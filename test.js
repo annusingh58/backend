@@ -4,8 +4,8 @@
 // anu Name here answer
 
 
-// console.log(name,"Name here")
-// var name="anu"
+console.log(name,"Name here")
+var name="anu"
 // undefined Name here answer
 
 
@@ -15,12 +15,12 @@
 //hoisting
 //closure
 
-//  var  sname; //declaration
-//  sname="anu"; //asign
-// console.log(sname);
+ var  sname;            //declaration
+ sname="anu";          //asign
+console.log(sname);
 
-// var  sname; //declaration
-// sname="anu"; //asign
+// var  sname; 
+// sname="anu"; 
 // console.log(sname);
 
 // let lname;
