@@ -12,8 +12,11 @@ app.use(express.json());   //data to parse
 app.use(morgan('dev'));// use()  middleware
 
  app.use('/api/v1',router);
+//  mongoose.connect(process.env.MONGOB) .then(()=> console.log("db connected"))
+//  .catch((err)=> console.log("db error=>",err));
 
  mongoose.connect('mongodb+srv://annusingh:anusingh58@cluster0.md93vry.mongodb.net/')
+
  .then(()=> console.log("db connected"))
  .catch((err)=> console.log("db error=>",err));
 
