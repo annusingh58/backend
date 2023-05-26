@@ -1,6 +1,8 @@
-export const addProduct =(req,res)=>{
+import Products from "../modals/Products.js";
+
+export const addProduct =async(req,res)=>{
     try{
-        // console.log(req.body)
+        console.log(req.body)
 
          const{Name,Price, Image} =req.body;
     // console.log(Name, Price ,Image, "req.body")
@@ -12,10 +14,22 @@ export const addProduct =(req,res)=>{
         // user ko ok true respond
 
 
+        const product= new Products({
+            name:Name,
+            price:Price,
+            Image:Image,
+        }
+
+        )
+        console.log(product,"chehk here")
+        await product.save();
+
+        return res.send(product);
+
 
     // res.send({Name ,Price,Image})
-    return res.send({Name, Price, Image})
-    return res.send(product)  // object structureing
+    // return res.send({Name, Price, Image})
+    // return res.send(product)  // object structureing
 
     } 
     catch(error){
