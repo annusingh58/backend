@@ -1,6 +1,5 @@
 import  express from "express";
 
-// import { login, register } from "../controllers/UserControllers.js";
 import { login, register,getUserByEmail,updateUser} from "../controllers/UserControllers.js";
 import { addProduct,getAllProducts} from "../controllers/ProductControllers.js";
 
