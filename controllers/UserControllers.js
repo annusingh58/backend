@@ -1,3 +1,4 @@
+import { response } from "express";
 import Users from "../modals/Users.js";
 
 // export const login =(req,res)=> {
@@ -79,4 +80,41 @@ export const register= async(req,res)=>{
 
     return res.send (error)
  }
+}
+
+
+
+
+
+
+
+
+export const updateUser = async(req,res)=>{
+    try{
+        const{email,name}=req.body;
+        if(!email) return res.send("email not found");
+        if(!name) return res.send("name not found");
+        const response = await Users.findOneAndUpdate({ email }, { name }).exec();
+        res.send(response);
+    }
+    catch(error){
+        res.send(error)
+    }
+}
+
+
+
+export const getUserByEmail = async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) return res.send("Email not found!")
+        const response = await Users.find({ email }).exec();
+        if (response) {
+            return res.send(response[0])
+        } else {
+            return res.send("User not found!")
+        }
+    } catch (error) {
+        return res.send(error)
+    }
 }
