@@ -7,6 +7,8 @@ import { addProduct,getAllProducts} from "../controllers/ProductControllers.js";
 // import { getUserByEmail } from "../controllers/UserControllers.js";
 // import { updateUser } from "../controllers/UserControllers.js";
 import { checkEmail,checkName } from "../middleware/authMiddleware.js";
+import { otpRegisteration } from "../controllers/OtpControllers.js";
+import { otpCheckForRegister } from "../controllers/OtpControllers.js";
 var router = express.Router();
 
 // router.get('/login',login);
@@ -21,7 +23,11 @@ router.post('/getuserbyYemail',checkEmail,getUserByEmail);
 
 
 router.post('/update-User',checkEmail,checkName,updateUser)
-router.post('/getUserByEmail',getUserByEmail)
+router.post('/getUserByEmail',getUserByEmail);
+
+router.post('/otp-register', otpRegisteration);
+router.post('/otp-check-register', otpCheckForRegister)
+
 
 
 
