@@ -7,8 +7,13 @@ const User = new Schema({
     name:String,
     email:String,
     password:String,
-    otp: String,
-    number:Number
+    emailotp: String,
+    numberotp:String,
+    isEmailVerified: Boolean,
+    number:Number,
+    // loginotp:String,
+    loginemailotp:String,
+    loginnumberotp:String
    
 
 });
