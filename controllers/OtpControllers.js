@@ -12,8 +12,9 @@ export const otpRegisteration =async (req,res) => {
     if(!email) return res.send("Email is required");
      console.log(number);
 
-    var codeemail = uuidv4();
-    var codenumber=uuidv4();
+    var codeemail = uuidv4();  // var declare for email 
+
+    var codenumber=uuidv4();   // var declare for number
     // console.log(code,"code here")
     // res.send(code);
 
@@ -76,71 +77,11 @@ try{
 
 
 
-// .................otpNumberRegistration...............
+
+//   ..............otp --chk --for -number-only-registeration..............
 
 
-// export const otpNumberRegistration = async (req, res) =>{
-//     try{
-//         const {number} = req.body;
-//         if(!number) return res.send("number not found.")
-        
-//         var codeforNumber = uuidv4();
-        
-
-//         const isNummberPresent = await Users.find({number}).exec();
-//         if(!isNummberPresent.length) return res.send("Number already used")
-        
-
-//         const user = new Users({
-//             number : number,
-//             otpForNumber : codeforNumber,
-//             isNumberVerified : false
-
-            
-//         })
-//         await user.save();
-//         res.send("Check your mobile number  for otp.")
-
-//     }catch(error){
-//         return res.send(error);
-//     }
-// }
-
-
-
-// // .............otpEmailRegistration..................................
-
-
-// export const otpEmailRegistration = async (req, res) =>{
-//     try{
-//         const { number,email} = req.body;
-//         if(!number) return res.send("number not found.")
-//         if(!email) return res.send("email is required")
-        
-//         var codeforEmail = uuidv4();
-
-//         const isNummberPresent = await Users.find({number}).exec();
-        
-//         if(isNummberPresent[0].number==number){
-//             const user = await  Users.insert({number},{ email: email, otpForEmail : codeforEmail} )
-//             console.log(user);
-//             await user.save();
-//             res.send("Check your mobile email for otp.")
-//         }else{
-//             return res.send("number is wrong")
-//         } 
-
-
-       
-
-//     }catch(error){
-//         return res.send(error);
-//     }
-// }
-
-
-
-export const otpCkeckForNumber = async (req, res) => {
+export const otpCkeckForNumber = async (req, res) => {      
     try{
         const {number,otp} = req.body;
         if(!number) return res.send("number is required");
@@ -166,6 +107,11 @@ export const otpCkeckForNumber = async (req, res) => {
         return res.send(error);
     }
 }
+
+
+// ...................otp -chk -for -email -only- registeration.........
+
+
 
 export const otpCkeckForEmail = async (req, res) => {
     try{
@@ -196,6 +142,10 @@ export const otpCkeckForEmail = async (req, res) => {
 
 
 
+
+// ...............LOGIN- OTP -CLASS-PRACTICE.............
+
+
 export const otplogin = async (req, res) => {
 try{
         const{email,number} = req.body;
@@ -221,7 +171,7 @@ try{
 
 }
 
-
+// .............OTP CHECK LOGIN CLASS.............
 
 
 // export const otpchecklogin =async (req,res) => {
@@ -246,6 +196,7 @@ try{
 
 
 
+// ....................OTP-LOGIN-FOR-EMAIL..............................
 
 export const otpCkeckForloginEmail = async (req, res) => {
     try{
@@ -273,6 +224,9 @@ export const otpCkeckForloginEmail = async (req, res) => {
     }
 }
 
+
+
+// ....................LOGIN-OTP-FOR-NUMBER................
 
 export const otpCkeckForloginNumber = async (req, res) => {
     try{
