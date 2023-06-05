@@ -126,7 +126,7 @@ export const otpCkeckForEmail = async (req, res) => {
             const user = await Users.findOneAndUpdate({ email }, { isEmailVerified: true }).exec();
             await user.save();
             // res.send("Check your mobile number  for otp.")
-         return res.send("Emaail is verified");
+         return res.send("Email is verified");
 
         }
         return res.send("otp wrong plz try again");
