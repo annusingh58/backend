@@ -44,5 +44,5 @@ app.get('/snhel' , Snhel)
 // app.delete();
 
 
-app.listen(1002,()=> console.log("working on port 8000")) //port  use for run
+app.listen(5000,()=> console.log("working on port 8000")) //port  use for run
 

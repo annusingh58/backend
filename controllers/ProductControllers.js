@@ -21,7 +21,7 @@ export const addProduct =async(req,res)=>{
         }
 
         )
-        console.log(product,"chehk here")
+        console.log(product,"check here")
         await product.save();
 
         return res.send(product);
